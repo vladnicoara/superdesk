@@ -1,0 +1,22 @@
+<div class="tablist {{ :: side }}-tablist">
+    <ul class="navigation-tabs">
+        <li ng-repeat="widget in widgets | orderBy:'order'"
+            ng-class="{active: widget === active[side]}">
+            <button id="{{ :: widget.label }}" class="btn" type="submit"
+                ng-click="activate(widget)"
+                ng-disabled="widget.needUnlock && item._locked"
+                tooltip="{{ :: widget.label }}" tooltip-placement="right">
+                <i class="big-icon-{{ :: widget.icon }}"></i>
+            </button>
+        </li>
+    </ul>
+</div>
+
+<div class="tabpane {{ :: side }}-tabpane open-tabpane widget-{{ active[side]._id }}"
+    ng-if="active[side] && (!active[side].needUnlock || !item._locked)">
+    <section class="tabcontent" ng-init="widget=active[side]">
+        <div sd-widget data-widget="active[side]">
+            <div ng-include="active[side].template"></div>
+        </div>
+    </section>
+</div>

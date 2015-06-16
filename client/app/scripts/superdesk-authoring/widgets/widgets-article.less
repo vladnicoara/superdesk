@@ -33,6 +33,41 @@
 	}
 }
 
+.widget-wrapper.menu {
+	left: @sf-main-menu-width;
+}
+
+.view-widgets {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.top > .tablist, .top > .tabpane {
+		top: 48px;
+		bottom: 0;
+	}
+
+	.main {
+		position: absolute;
+		top: 0;
+		left: @tablist-width;
+		right: 0;
+		bottom: 0;
+
+		.transition( all 0.3s ease);
+	}
+
+	&.open {
+		.main {left: @tablist-width + @tabpane-width}
+
+		&.extended {
+			.main {left: @tablist-width + @tabpane-extended-width}
+		}
+	}
+}
+
 .tabpane {
 	.sd-widget {
 		width: auto; height: auto;
