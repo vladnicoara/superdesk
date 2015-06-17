@@ -31,7 +31,7 @@ define([
                 icon: 'ingest',
                 template: require.toUrl('./widget-ingest.html'),
                 side: 'left',
-                display: {authoring: true, packages: false}
+                display: {main: true}
             });
         }])
         .controller('IngestController', ['$scope', 'api', 'BaseWidgetController',

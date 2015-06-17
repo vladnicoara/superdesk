@@ -25,11 +25,11 @@
       </div>
   </div>
 
-  <div id="main-menu">
+  <div id="main-menu" ng-if="flags.menu">
     <div class="header"></div>
     <div class="content">
       <ul>
-        <li ng-repeat="item in menu | orderBy:'priority'" ng-class="{active: item.isActive}">
+        <li ng-repeat="item in menu track by item.href | orderBy:'priority'" ng-class="{active: item.isActive}">
           <a ng-href="#{{ :: item.href }}" title="{{ :: item.description | translate }}">{{ :: item.label | translate }}</a>
         </li>
       </ul>

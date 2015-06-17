@@ -31,7 +31,7 @@ define([
                 icon: 'archive',
                 template: require.toUrl('./widget-archive.html'),
                 side: 'left',
-                display: {authoring: true, packages: false}
+                display: {main: true}
             });
         }])
         .controller('ArchiveController', ['$scope', 'api', 'BaseWidgetController', '$location',

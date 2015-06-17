@@ -292,7 +292,7 @@
             template: 'scripts/superdesk-desks/views/aggregate.html',
             side: 'left',
             extended: true,
-            display: {authoring: true, packages: false}
+            display: {main: true}
         });
     }])
     .controller('AggregateCtrl', AggregateCtrl)
