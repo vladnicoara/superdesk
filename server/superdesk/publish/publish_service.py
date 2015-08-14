@@ -32,8 +32,9 @@ class PublishService():
             raise SubscriberError.subscriber_inactive_error(Exception('Subscriber inactive'), subscriber)
         else:
             try:
-                self._transmit(queue_item, subscriber) or []
-                update_item_status(queue_item, 'success')
+                transmitted = self._transmit(queue_item, subscriber) or []
+                if transmitted:
+                    update_item_status(queue_item, 'success')
             except SuperdeskPublishError as error:
                 update_item_status(queue_item, 'error', error)
                 self.close_transmitter(subscriber, error)
