@@ -712,7 +712,7 @@
                               'views/settings.html';
 
             superdesk.activity('/settings/content-filters', {
-                    label: gettext('Content Filters'),
+                    label: gettext('Channels'),
                     controller: ContentFiltersConfigController,
                     controllerAs: 'ctrl',
                     templateUrl: templateUrl,

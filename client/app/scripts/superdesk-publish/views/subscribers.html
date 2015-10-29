@@ -5,7 +5,7 @@
             <i class="icon-plus-sign icon-white"></i> <span translate>Add New Subscriber</span>
         </button>
     </div>
-    
+
     <div class="content">
         <ul class="pills-list provider-list">
             <li ng-repeat="subscriber in subscribers._items track by subscriber._id" class="clearfix">
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="field">
-                            <label translate class="right">Content Filter</label>
+                            <label translate class="right">Channel</label>
                             <select class="input" ng-model="subscriber.content_filter.filter_id">
                                 <option value=""></option>
                                 <option value="{{filter._id}}" ng-selected="filter._id === subscriber.content_filter.filter_id" ng-repeat="filter in contentFilters track by filter._id">{{:: filter.name}}</option>
