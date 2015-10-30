@@ -1,8 +1,8 @@
 <div ng-hide="hideList" class="split-content">
     <div class="header">
-        <h2 translate>Subscribers</h2>
+        <h2 translate>Outputs</h2>
         <button id="addSubscriber" class="btn btn-info pull-right" ng-click="edit()">
-            <i class="icon-plus-sign icon-white"></i> <span translate>Add New Subscriber</span>
+            <i class="icon-plus-sign icon-white"></i> <span translate>Add New Output</span>
         </button>
     </div>
 
@@ -23,8 +23,8 @@
 
 <div sd-modal data-model="subscriber" class="subscriber-modal modal-big moz-scroll-fix">
     <div class="modal-header"> <a href="" class="close" ng-click="cancel()"><i class="icon-close-small"></i></a>
-        <h3 translate ng-show="subscriber._id">Edit Subscriber "{{ origSubscriber.name }}"</h3>
-        <h3 translate ng-hide="subscriber._id">Add New Subscriber</h3>
+        <h3 translate ng-show="subscriber._id">Edit Output "{{ origSubscriber.name }}"</h3>
+        <h3 translate ng-hide="subscriber._id">Add New Output</h3>
     </div>
     <div class="modal-body">
         <form name="editForm">
@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="field">
-                            <label for="subType" translate>Subscriber Type</label>
+                            <label for="subType" translate>Output Type</label>
                             <select id="subType" ng-model="subscriber.subscriber_type" ng-options="s.value as s.name for s in subTypes" ng-change="changeFormats(subscriber.subscriber_type)" required>
                                 <option value=""></option>
                             </select>
@@ -96,14 +96,14 @@
                         </div>
 
                         <fieldset class="separated">
-                        <legend translate>Destinations</legend>
+                        <legend translate>Transmissions</legend>
                             <div sd-destination ng-repeat="destination in destinations" data-destination="destination"
                                  data-actions="[{label: 'Delete', fn: deleteDestination}]"></div>
                             <div sd-destination ng-if="newDestination"
                                 data-destination="newDestination"
                                 data-actions="[{label: 'Save', fn: saveNewDestination}, {label: 'Cancel', fn: cancelNewDestination}]"></div>
                             <button type="button" class="btn btn-info" ng-click="addNewDestination()" ng-show="newDestination === null">
-                                <i class="icon-plus-sign icon-white"></i> <span translate>Add New Destination</span>
+                                <i class="icon-plus-sign icon-white"></i> <span translate>Add New Transmission</span>
                             </button>
                         </fieldset>
                     </tab>

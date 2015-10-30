@@ -582,6 +582,7 @@
 
     app
         .service('adminPublishSettingsService', AdminPublishSettingsService)
+        .directive('sdAdminPubClients', SubscribersDirective)
         .directive('sdAdminPubSubscribers', SubscribersDirective)
         .directive('sdDestination', DestinationDirective)
         .controller('publishQueueCtrl', PublishQueueController);

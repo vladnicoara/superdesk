@@ -1,14 +1,21 @@
 <div id="publish-settings" sd-settings-view ng-init="tab = 'subscribers'">
 
-    <div class="split-content">
-        <ul class="nav nav-tabs">
-            <li ng-class="{active: tab === 'subscribers'}" ng-show="showSubscribers">
-                <button ng-click="tab = 'subscribers'" translate>Subscribers</button>
-            </li>
-        </ul>
-        
-        <div class="content">
-            <div ng-if="tab === 'subscribers'" sd-admin-pub-subscribers></div>
-        </div>
+  <div class="split-content">
+    <ul class="nav nav-tabs">
+      <li ng-class="{active: tab === 'clients'}">
+        <button ng-click="tab = 'clients'" translate>Clients</button>
+      </li>
+
+      <li ng-class="{active: tab === 'subscribers'}">
+        <button ng-click="tab = 'subscribers'" translate>Outputs</button>
+      </li>
+    </ul>
+
+    <div class="content" ng-switch="ctrl.activeTab">
+      <div ng-if="tab === 'clients'" sd-admin-pub-clients></div>
+      <div ng-if="tab === 'subscribers'" sd-admin-pub-subscribers></div>
     </div>
+
+
+  </div>
 </div>
