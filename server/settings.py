@@ -229,7 +229,9 @@ INSTALLED_APPS.extend([
     'apps.validate',
     'apps.workspace',
     'apps.macros',
-    'apps.archive_broadcast'
+    'apps.archive_broadcast',
+
+    'apps.superdesk_whatsapp',
 ])
 
 RESOURCE_METHODS = ['GET', 'POST']
